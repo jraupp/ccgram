@@ -1,0 +1,21 @@
+#imag_show.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel.heading.imag_image
+        = image_tag @imag.image.url
+      .panel-body
+        %h1= @imag.titulo
+        %p= @imag.descricao
+
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+              por 
+              = @imag.user.email
+
+          .col.md-6
+            .btn-group.pull-right
+              - if user_signed_in?
+                = link_to "Editar", edit_imag_path, class: "btn btn-info"
+                = link_to "Apagar", imag_path, method: :delete, data: { confirm: "Deseja deletar?" }, class: "btn btn-danger"

@@ -1,0 +1,8 @@
+.col-md-6.col-md-offset-3
+  #imags.transitions-enable
+    - @imags.each do |imag|
+      .box.panel.panel-default
+        = link_to (image_tag imag.image.url), imag
+        %h2= link_to imag.titulo, imag
+
+  

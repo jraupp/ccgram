@@ -1,0 +1,30 @@
+%html
+%head
+%title Ccgram 
+= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true 
+= javascript_include_tag 'application' => true
+= csrf_meta_tags 
+
+
+%body
+  %nav.navbar.navbar-inverse
+    .container  
+      .navbar-brand= link_to "Ccgram", root_path
+
+      - if user_signed_in?
+        %ul.nav.navbar-nav.navbar-left
+          %li= link_to "Enviar Foto", new_imag_path
+          %li= link_to "Configurações", edit_user_registration_path
+          %li= link_to "Deslogar", destroy_user_session_path
+      - else
+        %ul.nav.navbar-nav.navbar-left
+          %li= link_to "Registrar-se", new_user_registration_path
+          %li= link_to "Entrar", new_user_session_path
+
+
+-flash.each do |name, msg|
+  =content_tag :div, msg, class: "alert alert-info"
+    
+= yield 
+
+ 
