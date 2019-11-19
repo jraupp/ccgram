@@ -30,7 +30,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.2'
 gem 'coffee-rails', '~> 5.0.0'
-gem 'paperclip', '~> 4.2.0'
+gem 'paperclip', '~> 5.2.0'
 gem 'masonry-rails', '~> 0.2.4'
 
 
